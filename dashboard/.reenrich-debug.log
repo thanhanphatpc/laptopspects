@@ -1,10 +1,9 @@
-[2026-09-03T08:33:59.930Z] --- Bắt đầu reenrich-dashboard-csv.js ---
-[2026-09-03T08:34:00.928Z] Đọc data.csv hiện có: 54099 dòng.
-[2026-09-03T08:34:00.929Z] Đọc Part # (FORMULA render)...
-[2026-09-03T08:34:01.706Z]   10276 dòng
-[2026-09-03T08:34:01.706Z] Đọc Segment (FORMULA render)...
-[2026-09-03T08:34:01.856Z]   120 dòng
-[2026-09-03T08:34:01.857Z] Part# header index: {"Product Name":0,"Vendor":1,"Part #":2,"CPU Segment":3,"CPU":4,"RAM":5,"SSD":6,"Screen":7,"GPU":8,"V-RAM":9,"Status":10,"Series Group":11,"Segment":12,"CPU (Listed)":13,"RAM (Listed)":14,"Storage":15,"Screen Size":16,"GPU (Listed)":17,"Weight":18,"Product Link":19,"Focus Model":20,"Availability":21}
-[2026-09-03T08:34:01.891Z] Part# map: 4050 SKU
-[2026-09-03T08:34:02.234Z] Re-enrich xong: 50633/54099 dòng khớp Part # (loại 0 SP EOL), 3378 dòng được chuẩn hoá spec.
-[2026-09-03T08:34:02.651Z] ✅ Đã ghi lại /home/runner/work/MBW-Scrape-number/MBW-Scrape-number/dashboard/data.csv — 54100 dòng (kể cả header), 18425 KB
+[2026-09-19T06:02:45.170Z] --- Bắt đầu reenrich-dashboard-csv.js ---
+[2026-09-19T06:02:45.959Z] Đọc data.csv hiện có: 74627 dòng.
+[2026-09-19T06:02:45.959Z] Đọc Part # (FORMULA render)...
+[2026-09-19T06:02:46.399Z] 💥 Lỗi: Error: Unable to parse range: 'Part #'!A1:AE
+    at Gaxios._request (/home/runner/work/laptopspects/laptopspects/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async JWT.requestAsync (/home/runner/work/laptopspects/laptopspects/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)
+    at async readTabFormula (/home/runner/work/laptopspects/laptopspects/reenrich-dashboard-csv.js:76:15)
+    at async main (/home/runner/work/laptopspects/laptopspects/reenrich-dashboard-csv.js:124:20)

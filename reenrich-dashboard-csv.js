@@ -120,15 +120,28 @@ async function main() {
   });
   const sheets = google.sheets({ version: 'v4', auth });
 
-  debugLog('Đọc Part # (FORMULA render)...');
-  const partRows = await readTabFormula(sheets, 'Part #', 'AE');
-  debugLog(`  ${Math.max(0, partRows.length - 1)} dòng`);
+  // FIX 19/09/2026 [fork thanhanphatpc/laptopspects]: xem chu thich cung
+  // trong enrich-and-export.js — Sheet nay chua co tab "Part #"/"Segment",
+  // bat loi rieng cho tung tab thay vi de nem loi lam dung ca script.
+  let partRows = [];
+  try {
+    debugLog('Đọc Part # (FORMULA render)...');
+    partRows = await readTabFormula(sheets, 'Part #', 'AE');
+    debugLog(`  ${Math.max(0, partRows.length - 1)} dòng`);
+  } catch (e) {
+    debugLog(`⚠ Không đọc được tab "Part #" (${e.message}) — bỏ qua, giữ nguyên spec thô hiện có trong data.csv.`);
+  }
 
-  debugLog('Đọc Segment (FORMULA render)...');
-  const segmentRows = await readTabFormula(sheets, 'Segment', 'D');
-  debugLog(`  ${Math.max(0, segmentRows.length - 1)} dòng`);
+  let segmentRows = [];
+  try {
+    debugLog('Đọc Segment (FORMULA render)...');
+    segmentRows = await readTabFormula(sheets, 'Segment', 'D');
+    debugLog(`  ${Math.max(0, segmentRows.length - 1)} dòng`);
+  } catch (e) {
+    debugLog(`⚠ Không đọc được tab "Segment" (${e.message}) — bỏ qua, Series Group/Segment sẽ để trống.`);
+  }
 
-  fs.unlinkSync(CREDS_PATH);
+  try { fs.unlinkSync(CREDS_PATH); } catch (_) {}
 
   // Segment!C (tên dòng SP) -> Series Group — 1:1 logic voi enrich-and-export.js
   const segmentTable = [];

@@ -1,7 +1,7 @@
-[2026-09-19T04:57:52.764Z] --- Bắt đầu enrich-and-export.js ---
-[2026-09-19T04:57:52.774Z] Đọc được 2398 SP từ 4 file artifact (scrape-artifacts)
-[2026-09-19T04:57:52.774Z] Đọc Part # (FORMULA render)...
-[2026-09-19T04:57:53.067Z] 💥 Lỗi: Error: Unable to parse range: 'Part #'!A1:AE
+[2026-09-19T05:23:59.362Z] --- Bắt đầu enrich-and-export.js ---
+[2026-09-19T05:23:59.370Z] Đọc được 2397 SP từ 4 file artifact (scrape-artifacts)
+[2026-09-19T05:23:59.370Z] Đọc Part # (FORMULA render)...
+[2026-09-19T05:23:59.737Z] 💥 Lỗi: Error: Unable to parse range: 'Part #'!A1:AE
     at Gaxios._request (/home/runner/work/laptopspects/laptopspects/node_modules/gaxios/build/src/gaxios.js:142:23)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async JWT.requestAsync (/home/runner/work/laptopspects/laptopspects/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)

@@ -1,9 +1,11 @@
-[2026-09-19T06:02:45.170Z] --- Bắt đầu reenrich-dashboard-csv.js ---
-[2026-09-19T06:02:45.959Z] Đọc data.csv hiện có: 74627 dòng.
-[2026-09-19T06:02:45.959Z] Đọc Part # (FORMULA render)...
-[2026-09-19T06:02:46.399Z] 💥 Lỗi: Error: Unable to parse range: 'Part #'!A1:AE
-    at Gaxios._request (/home/runner/work/laptopspects/laptopspects/node_modules/gaxios/build/src/gaxios.js:142:23)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async JWT.requestAsync (/home/runner/work/laptopspects/laptopspects/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)
-    at async readTabFormula (/home/runner/work/laptopspects/laptopspects/reenrich-dashboard-csv.js:76:15)
-    at async main (/home/runner/work/laptopspects/laptopspects/reenrich-dashboard-csv.js:124:20)
+[2026-09-19T06:35:06.473Z] --- Bắt đầu reenrich-dashboard-csv.js ---
+[2026-09-19T06:35:07.861Z] Đọc data.csv hiện có: 74627 dòng.
+[2026-09-19T06:35:07.861Z] Đọc Part # (FORMULA render)...
+[2026-09-19T06:35:08.232Z] ⚠ Không đọc được tab "Part #" (Unable to parse range: 'Part #'!A1:AE) — bỏ qua, giữ nguyên spec thô hiện có trong data.csv.
+[2026-09-19T06:35:08.233Z] Đọc Segment (FORMULA render)...
+[2026-09-19T06:35:08.355Z] ⚠ Không đọc được tab "Segment" (Unable to parse range: 'Segment'!A1:D) — bỏ qua, Series Group/Segment sẽ để trống.
+[2026-09-19T06:35:08.355Z] Part# header index: {}
+[2026-09-19T06:35:08.355Z] ⚠ Part# thiếu cột bắt buộc (Product Name hoặc Focus Model) — kiểm tra lại header tab.
+[2026-09-19T06:35:08.356Z] Part# map: 0 SKU
+[2026-09-19T06:35:09.357Z] Re-enrich xong: 0/74627 dòng khớp Part # (loại 0 SP EOL), 47129 dòng được chuẩn hoá spec.
+[2026-09-19T06:35:10.086Z] ✅ Đã ghi lại /home/runner/work/laptopspects/laptopspects/dashboard/data.csv — 74628 dòng (kể cả header), 25254 KB

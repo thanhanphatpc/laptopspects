@@ -1,9 +1,15 @@
-[2026-09-19T05:44:07.666Z] --- Bắt đầu enrich-and-export.js ---
-[2026-09-19T05:44:07.672Z] Đọc được 2400 SP từ 4 file artifact (scrape-artifacts)
-[2026-09-19T05:44:07.672Z] Đọc Part # (FORMULA render)...
-[2026-09-19T05:44:07.924Z] 💥 Lỗi: Error: Unable to parse range: 'Part #'!A1:AE
-    at Gaxios._request (/home/runner/work/laptopspects/laptopspects/node_modules/gaxios/build/src/gaxios.js:142:23)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async JWT.requestAsync (/home/runner/work/laptopspects/laptopspects/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)
-    at async readTabFormula (/home/runner/work/laptopspects/laptopspects/enrich-and-export.js:115:15)
-    at async main (/home/runner/work/laptopspects/laptopspects/enrich-and-export.js:157:20)
+[2026-09-19T09:05:57.602Z] --- Bắt đầu enrich-and-export.js ---
+[2026-09-19T09:05:57.611Z] Đọc được 2405 SP từ 4 file artifact (scrape-artifacts)
+[2026-09-19T09:05:57.611Z] Đọc Part # (FORMULA render)...
+[2026-09-19T09:05:57.965Z] ⚠ Không đọc được tab "Part #" (Unable to parse range: 'Part #'!A1:AE) — bỏ qua, dùng dữ liệu thô lúc scrape thay thế.
+[2026-09-19T09:05:57.966Z] Đọc Segment (FORMULA render)...
+[2026-09-19T09:05:58.222Z] ⚠ Không đọc được tab "Segment" (Unable to parse range: 'Segment'!A1:D) — bỏ qua, Series Group/Segment sẽ để trống.
+[2026-09-19T09:05:58.222Z] Part# header index: {}
+[2026-09-19T09:05:58.222Z] ⚠ Part# thiếu cột bắt buộc (Product Name hoặc Focus Model) — kiểm tra lại header tab.
+[2026-09-19T09:05:58.222Z] Part# map: 0 SKU
+[2026-09-19T09:05:58.222Z] Vendor chuan tu Part#: 0 gia tri -> []
+[2026-09-19T09:05:58.249Z] Tính xong 2405 dòng enriched (loại 0 SP EOL)
+[2026-09-19T09:05:59.502Z] data.csv cũ: 74627 dòng, giữ lại 74627 dòng (loại dòng 19/09/2026 nếu có, sẽ thêm bản mới)
+[2026-09-19T09:05:59.665Z] ✅ Không có giá bất thường (kiểm tra 2405 dòng vs trung vị 7 ngày)
+[2026-09-19T09:05:59.682Z] Cắt còn 35 ngày gần nhất (75697 dòng)
+[2026-09-19T09:06:00.484Z] ✅ Đã ghi /home/runner/work/laptopspects/laptopspects/dashboard/data.csv — 75698 dòng (kể cả header), 25521 KB

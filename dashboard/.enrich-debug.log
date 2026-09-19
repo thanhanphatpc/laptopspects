@@ -1,15 +1,9 @@
-[2026-09-18T01:48:23.873Z] --- Bắt đầu enrich-and-export.js ---
-[2026-09-18T01:48:23.886Z] Đọc được 2803 SP từ 5 file artifact (scrape-artifacts)
-[2026-09-18T01:48:23.886Z] Đọc Part # (FORMULA render)...
-[2026-09-18T01:48:24.550Z]   10276 dòng
-[2026-09-18T01:48:24.550Z] Đọc Segment (FORMULA render)...
-[2026-09-18T01:48:24.839Z]   120 dòng
-[2026-09-18T01:48:24.839Z] Part# header index: {"Product Name":0,"Vendor":1,"Part #":2,"CPU Segment":3,"CPU":4,"RAM":5,"SSD":6,"Screen":7,"GPU":8,"V-RAM":9,"Status":10,"Series Group":11,"Segment":12,"CPU (Listed)":13,"RAM (Listed)":14,"Storage":15,"Screen Size":16,"GPU (Listed)":17,"Weight":18,"Product Link":19,"Focus Model":20,"Availability":21}
-[2026-09-18T01:48:24.868Z] Part# map: 4050 SKU
-[2026-09-18T01:48:24.868Z] Vendor chuan tu Part#: 13 gia tri -> ["Asus","Samsung","Gigabyte","Acer","Hp","Dell","Lenovo","Msi","Apple","Colorful","Lg","Masstel","Singpc"]
-[2026-09-18T01:48:24.899Z] Tính xong 2696 dòng enriched (loại 107 SP EOL)
-[2026-09-18T01:48:25.835Z] data.csv cũ: 73266 dòng, giữ lại 73266 dòng (loại dòng 18/09/2026 nếu có, sẽ thêm bản mới)
-[2026-09-18T01:48:25.981Z]   ⚠ Giá bất thường: An Phat | Laptop ASUS Vivobook X1404VA-EB609W (Intel Core 3 Proce — 43.990.000đ vs trung vị 19.900.000đ (lệch 121%) → bỏ giá
-[2026-09-18T01:48:25.985Z] ⚠ Đã loại giá của 1 dòng vì lệch > 55.00000000000001% so với trung vị 7 ngày của chính SKU đó
-[2026-09-18T01:48:25.998Z] Cắt còn 35 ngày gần nhất (74627 dòng)
-[2026-09-18T01:48:26.762Z] ✅ Đã ghi /home/runner/work/MBW-Scrape-number/MBW-Scrape-number/dashboard/data.csv — 74628 dòng (kể cả header), 25840 KB
+[2026-09-19T04:57:52.764Z] --- Bắt đầu enrich-and-export.js ---
+[2026-09-19T04:57:52.774Z] Đọc được 2398 SP từ 4 file artifact (scrape-artifacts)
+[2026-09-19T04:57:52.774Z] Đọc Part # (FORMULA render)...
+[2026-09-19T04:57:53.067Z] 💥 Lỗi: Error: Unable to parse range: 'Part #'!A1:AE
+    at Gaxios._request (/home/runner/work/laptopspects/laptopspects/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async JWT.requestAsync (/home/runner/work/laptopspects/laptopspects/node_modules/google-auth-library/build/src/auth/oauth2client.js:429:18)
+    at async readTabFormula (/home/runner/work/laptopspects/laptopspects/enrich-and-export.js:115:15)
+    at async main (/home/runner/work/laptopspects/laptopspects/enrich-and-export.js:157:20)

@@ -30,6 +30,16 @@ on:
         description: 'TEST: ep chay nhanh Bright Data (FPT+PV) du may self-hosted dang online - binh thuong de FALSE'
         type: boolean
         default: false
+      first_run_allow_empty:
+        description: 'CHI dung lan dau tien: cho phep ghi vao Google Sheet dang trong (bo qua guard "existingRows = 0"). Bo TICK lai sau lan dau.'
+        type: boolean
+        default: false
+  # [FORK thanhanphatpc/laptopspects] Bat lai GitHub schedule (repo goc da tat
+  # vi cron GitHub hay tre ~36 phut va ho dung VPS rieng thay the - fork nay
+  # khong co VPS nao nen dung schedule chuan cua GitHub, chap nhan co the tre
+  # vai chuc phut vao gio cao diem).
+  schedule:
+    - cron: '0 1 * * *' # 01:00 UTC = 08:00 gio Viet Nam, hang ngay
 
 # Chan 2 LAN CHAY (workflow run) chong nhau — van giu nguyen tu ban fix
 # truoc, vi neu 2 lan trigger trung gio thi van co the co 2 bo "3 job song
@@ -311,7 +321,10 @@ jobs:
   # Duong lui 1: API hong + co may self-hosted online.
   scrape-pv:
     needs: [check-runners, scrape-pv-api]
-    if: ${{ always() && (inputs.run_scrape || github.event_name == 'schedule') && needs.check-runners.outputs.online == 'true' && !inputs.force_fallback && needs.scrape-pv-api.result != 'success' }}
+    # [FORK thanhanphatpc/laptopspects] Tat: fork nay khong co may self-hosted,
+    # job nay se treo cho runner vo thoi han neu bat. PV da du dung qua
+    # scrape-pv-api (Teko API, chay tren cloud, mien phi) o tren.
+    if: false
     runs-on: self-hosted
     timeout-minutes: 90
     steps:
@@ -372,7 +385,9 @@ jobs:
   # BARACK deu nhan duoc - co che du phong co chu dich, DUNG ghim may cu the.
   scrape-fpt:
     needs: check-runners
-    if: ${{ (inputs.run_scrape || github.event_name == 'schedule') && needs.check-runners.outputs.online == 'true' && !inputs.force_fallback }}
+    # [FORK thanhanphatpc/laptopspects] Tat: can may self-hosted rieng, fork
+    # nay chua co. FPT tam thoi bo qua theo lua chon cua Anh Thanh.
+    if: false
     runs-on: self-hosted
     timeout-minutes: 90
     steps:
@@ -439,7 +454,9 @@ jobs:
   scrape-fpt-online:
     name: Scrape FPT (Bright Data - fallback khi may offline)
     needs: check-runners
-    if: ${{ (inputs.run_scrape || github.event_name == 'schedule') && (needs.check-runners.outputs.online == 'false' || inputs.force_fallback) }}
+    # [FORK thanhanphatpc/laptopspects] Tat: can secret BRIGHTDATA_BROWSER_WS
+    # (dich vu tra phi) ma fork nay chua dang ky. FPT tam thoi bo qua.
+    if: false
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -501,7 +518,9 @@ jobs:
   scrape-pv-online:
     name: Scrape PV (Bright Data - fallback khi may offline)
     needs: [check-runners, scrape-pv-api]
-    if: ${{ always() && (inputs.run_scrape || github.event_name == 'schedule') && (needs.check-runners.outputs.online == 'false' || inputs.force_fallback) && needs.scrape-pv-api.result != 'success' }}
+    # [FORK thanhanphatpc/laptopspects] Tat: can secret BRIGHTDATA_BROWSER_WS
+    # (dich vu tra phi) ma fork nay chua dang ky. PV da du dung scrape-pv-api.
+    if: false
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -653,9 +672,12 @@ jobs:
         env:
           SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-          SCRAPE_DEALERS: MBW,FPT,CPS,PV,APC
+          SCRAPE_DEALERS: MBW,CPS,PV,APC
           COMBINE_MODE: 'true'
           COMBINE_INPUT_DIR: scrape-artifacts
+          # [FORK thanhanphatpc/laptopspects] Chi bat khi tick input
+          # first_run_allow_empty (lan dau Sheet con trong) - binh thuong la ''.
+          ALLOW_EMPTY_EXISTING: ${{ inputs.first_run_allow_empty && 'true' || '' }}
         shell: bash
         run: set -o pipefail; npm start 2>&1 | tee combine-write-debug.log
 

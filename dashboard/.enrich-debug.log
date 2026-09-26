@@ -1,16 +1,16 @@
-[2026-09-25T06:07:49.402Z] --- Bắt đầu enrich-and-export.js ---
-[2026-09-25T06:07:49.410Z] Đọc được 1983 SP từ 3 file artifact (scrape-artifacts)
-[2026-09-25T06:07:49.410Z] Đọc Part # (FORMULA render)...
-[2026-09-25T06:07:49.702Z] ⚠ Không đọc được tab "Part #" (Unable to parse range: 'Part #'!A1:AE) — bỏ qua, dùng dữ liệu thô lúc scrape thay thế.
-[2026-09-25T06:07:49.702Z] Đọc Segment (FORMULA render)...
-[2026-09-25T06:07:49.825Z] ⚠ Không đọc được tab "Segment" (Unable to parse range: 'Segment'!A1:D) — bỏ qua, Series Group/Segment sẽ để trống.
-[2026-09-25T06:07:49.825Z] Part# header index: {}
-[2026-09-25T06:07:49.826Z] ⚠ Part# thiếu cột bắt buộc (Product Name hoặc Focus Model) — kiểm tra lại header tab.
-[2026-09-25T06:07:49.826Z] Part# map: 0 SKU
-[2026-09-25T06:07:49.826Z] Vendor chuan tu Part#: 0 gia tri -> []
-[2026-09-25T06:07:49.847Z] Tính xong 1983 dòng enriched (loại 0 SP EOL)
-[2026-09-25T06:07:51.033Z] data.csv cũ: 79934 dòng, giữ lại 79934 dòng (loại dòng 25/09/2026 nếu có, sẽ thêm bản mới)
-[2026-09-25T06:07:51.172Z]   ⚠ Giá bất thường: An Phat | Laptop Acer Predator Helios Neo PHN16-I71-9779 NH.U42SV — 109.990.000đ vs trung vị 17.890.000đ (lệch 515%) → bỏ giá
-[2026-09-25T06:07:51.175Z] ⚠ Đã loại giá của 1 dòng vì lệch > 55.00000000000001% so với trung vị 7 ngày của chính SKU đó
-[2026-09-25T06:07:51.190Z] Cắt còn 35 ngày gần nhất (80345 dòng)
-[2026-09-25T06:07:51.920Z] ✅ Đã ghi /home/runner/work/laptopspects/laptopspects/dashboard/data.csv — 80346 dòng (kể cả header), 26465 KB
+[2026-09-26T06:08:11.699Z] --- Bắt đầu enrich-and-export.js ---
+[2026-09-26T06:08:11.708Z] Đọc được 2363 SP từ 4 file artifact (scrape-artifacts)
+[2026-09-26T06:08:11.709Z] Đọc Part # (FORMULA render)...
+[2026-09-26T06:08:12.079Z] ⚠ Không đọc được tab "Part #" (Unable to parse range: 'Part #'!A1:AE) — bỏ qua, dùng dữ liệu thô lúc scrape thay thế.
+[2026-09-26T06:08:12.079Z] Đọc Segment (FORMULA render)...
+[2026-09-26T06:08:12.233Z] ⚠ Không đọc được tab "Segment" (Unable to parse range: 'Segment'!A1:D) — bỏ qua, Series Group/Segment sẽ để trống.
+[2026-09-26T06:08:12.233Z] Part# header index: {}
+[2026-09-26T06:08:12.233Z] ⚠ Part# thiếu cột bắt buộc (Product Name hoặc Focus Model) — kiểm tra lại header tab.
+[2026-09-26T06:08:12.233Z] Part# map: 0 SKU
+[2026-09-26T06:08:12.233Z] Vendor chuan tu Part#: 0 gia tri -> []
+[2026-09-26T06:08:12.263Z] Tính xong 2363 dòng enriched (loại 0 SP EOL)
+[2026-09-26T06:08:13.550Z] data.csv cũ: 80345 dòng, giữ lại 80345 dòng (loại dòng 26/09/2026 nếu có, sẽ thêm bản mới)
+[2026-09-26T06:08:13.694Z]   ⚠ Giá bất thường: An Phat | Laptop Acer Predator Helios Neo PHN16-I71-9779 NH.U42SV — 109.990.000đ vs trung vị 17.890.000đ (lệch 515%) → bỏ giá
+[2026-09-26T06:08:13.697Z] ⚠ Đã loại giá của 1 dòng vì lệch > 55.00000000000001% so với trung vị 7 ngày của chính SKU đó
+[2026-09-26T06:08:13.713Z] Cắt còn 35 ngày gần nhất (81028 dòng)
+[2026-09-26T06:08:14.455Z] ✅ Đã ghi /home/runner/work/laptopspects/laptopspects/dashboard/data.csv — 81029 dòng (kể cả header), 26590 KB

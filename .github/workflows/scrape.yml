@@ -39,7 +39,7 @@ on:
   # khong co VPS nao nen dung schedule chuan cua GitHub, chap nhan co the tre
   # vai chuc phut vao gio cao diem).
   schedule:
-    - cron: '0 1 * * *' # 01:00 UTC = 08:00 gio Viet Nam, hang ngay
+     - cron: '13 18 * * *' # 18:13 UTC = 01:13 gio VN, som + lech phut de tranh gio cao diem GitHub, du dem xong truoc 8h sang
 
 # Chan 2 LAN CHAY (workflow run) chong nhau — van giu nguyen tu ban fix
 # truoc, vi neu 2 lan trigger trung gio thi van co the co 2 bo "3 job song

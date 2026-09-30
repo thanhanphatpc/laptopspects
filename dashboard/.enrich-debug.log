@@ -1,16 +1,15 @@
-[2026-09-29T06:51:48.989Z] --- Bắt đầu enrich-and-export.js ---
-[2026-09-29T06:51:48.998Z] Đọc được 2367 SP từ 4 file artifact (scrape-artifacts)
-[2026-09-29T06:51:48.999Z] Đọc Part # (FORMULA render)...
-[2026-09-29T06:51:49.428Z] ⚠ Không đọc được tab "Part #" (Unable to parse range: 'Part #'!A1:AE) — bỏ qua, dùng dữ liệu thô lúc scrape thay thế.
-[2026-09-29T06:51:49.428Z] Đọc Segment (FORMULA render)...
-[2026-09-29T06:51:49.700Z] ⚠ Không đọc được tab "Segment" (Unable to parse range: 'Segment'!A1:D) — bỏ qua, Series Group/Segment sẽ để trống.
-[2026-09-29T06:51:49.700Z] Part# header index: {}
-[2026-09-29T06:51:49.700Z] ⚠ Part# thiếu cột bắt buộc (Product Name hoặc Focus Model) — kiểm tra lại header tab.
-[2026-09-29T06:51:49.700Z] Part# map: 0 SKU
-[2026-09-29T06:51:49.700Z] Vendor chuan tu Part#: 0 gia tri -> []
-[2026-09-29T06:51:49.727Z] Tính xong 2367 dòng enriched (loại 0 SP EOL)
-[2026-09-29T06:51:50.988Z] data.csv cũ: 82540 dòng, giữ lại 82540 dòng (loại dòng 29/09/2026 nếu có, sẽ thêm bản mới)
-[2026-09-29T06:51:51.125Z]   ⚠ Giá bất thường: An Phat | Laptop Acer Predator Helios Neo PHN16-I71-9779 NH.U42SV — 109.990.000đ vs trung vị 17.890.000đ (lệch 515%) → bỏ giá
-[2026-09-29T06:51:51.134Z] ⚠ Đã loại giá của 1 dòng vì lệch > 55.00000000000001% so với trung vị 7 ngày của chính SKU đó
-[2026-09-29T06:51:51.154Z] Cắt còn 35 ngày gần nhất (83262 dòng)
-[2026-09-29T06:51:51.939Z] ✅ Đã ghi /home/runner/work/laptopspects/laptopspects/dashboard/data.csv — 83263 dòng (kể cả header), 27026 KB
+[2026-09-30T22:24:54.128Z] --- Bắt đầu enrich-and-export.js ---
+[2026-09-30T22:24:54.137Z] Đọc được 2376 SP từ 4 file artifact (scrape-artifacts)
+[2026-09-30T22:24:54.138Z] Đọc Part # (FORMULA render)...
+[2026-09-30T22:24:54.444Z] ⚠ Không đọc được tab "Part #" (Unable to parse range: 'Part #'!A1:AE) — bỏ qua, dùng dữ liệu thô lúc scrape thay thế.
+[2026-09-30T22:24:54.445Z] Đọc Segment (FORMULA render)...
+[2026-09-30T22:24:54.592Z] ⚠ Không đọc được tab "Segment" (Unable to parse range: 'Segment'!A1:D) — bỏ qua, Series Group/Segment sẽ để trống.
+[2026-09-30T22:24:54.593Z] Part# header index: {}
+[2026-09-30T22:24:54.593Z] ⚠ Part# thiếu cột bắt buộc (Product Name hoặc Focus Model) — kiểm tra lại header tab.
+[2026-09-30T22:24:54.593Z] Part# map: 0 SKU
+[2026-09-30T22:24:54.593Z] Vendor chuan tu Part#: 0 gia tri -> []
+[2026-09-30T22:24:54.620Z] Tính xong 2376 dòng enriched (loại 0 SP EOL)
+[2026-09-30T22:24:55.870Z] data.csv cũ: 83262 dòng, giữ lại 83262 dòng (loại dòng 01/10/2026 nếu có, sẽ thêm bản mới)
+[2026-09-30T22:24:56.007Z] ✅ Không có giá bất thường (kiểm tra 2376 dòng vs trung vị 7 ngày)
+[2026-09-30T22:24:56.026Z] Cắt còn 35 ngày gần nhất (83949 dòng)
+[2026-09-30T22:24:56.894Z] ✅ Đã ghi /home/runner/work/laptopspects/laptopspects/dashboard/data.csv — 83950 dòng (kể cả header), 27152 KB
